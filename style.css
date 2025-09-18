@@ -1,1 +1,200 @@
 
+/* CSS Variables for theming */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --bg-color: #f9f9f9;
+    --card-bg: white;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --text-color: #f9f9f9;
+    --bg-color: #333;
+    --card-bg: #444;
+}
+
+/* Blue theme variables */
+[data-theme="blue"] {
+    --primary-color: #2980b9;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #ecf0f1;
+    --bg-color: #34495e;
+    --card-bg: #2c3e50;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: var(--transition);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+input, select, button {
+    padding: 0.8rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+}
+
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: var(--border-radius);
+    min-height: 20px;
+}
+
+#multiplicationTable {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#multiplicationTable div {
+    padding: 0.5rem;
+    background: rgba(52, 152, 219, 0.2);
+    border-radius: 4px;
+    text-align: center;
+}
+
+#dynamicList {
+    margin-top: 1rem;
+    list-style-type: none;
+}
+
+#dynamicList li {
+    padding: 0.5rem;
+    background: rgba(52, 152, 219, 0.1);
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dynamicList li button {
+    background: var(--accent-color);
+    padding: 0.3rem 0.5rem;
+}
+
+#elementContainer {
+    margin-top: 1rem;
+}
+
+#elementContainer > * {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    #multiplicationTable {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #multiplicationTable {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
